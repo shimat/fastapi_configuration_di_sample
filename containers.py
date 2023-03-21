@@ -1,5 +1,5 @@
 from dependency_injector import containers, providers
-from services import MyService
+from services import MyFactoryService, MySingletonService
 
 
 class Container(containers.DeclarativeContainer):
@@ -7,7 +7,12 @@ class Container(containers.DeclarativeContainer):
 
     env_config = providers.Configuration()
 
-    my_service = providers.Factory(
-        MyService,
-        config=env_config
+    factory_service = providers.Factory(
+        MyFactoryService,
+        config=env_config.factory_message
+    )
+
+    singleton_service = providers.Singleton(
+        MySingletonService,
+        config=env_config.singleton_message
     )

@@ -1,10 +1,18 @@
-from dependency_injector import providers
+class MyFactoryService:
+    def __init__(self, config: str) -> None:
+        print("MyFactoryService init")
+        print(f"{type(config)=}, value={config}")
+        self.config_value = str(config)
+
+    def run(self) -> str:
+        return self.config_value
 
 
-class MyService:
-    def __init__(self, config: providers.Configuration) -> None:
-        print("MyService init")
-        self.config_value = config()
+class MySingletonService:
+    def __init__(self, config: str) -> None:
+        print("MySingletonService init")
+        print(f"{type(config)=}, value={config}")
+        self.config_value = str(config)
 
     def run(self) -> str:
         return self.config_value
