@@ -1,6 +1,9 @@
 # fastapi_configuration_di_sample
 FastAPI + Dependency Injector with Configuration Provider
 
+## Requirements
+The author created this using Python 3.10.5.
+
 ## Usage
 
 ```
