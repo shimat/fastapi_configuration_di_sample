@@ -14,4 +14,5 @@ async def startup_event():
     print("startup_event")
     container.env_config.factory_message.from_env("FACTORY_MESSAGE")
     container.env_config.singleton_message.from_env("SINGLETON_MESSAGE")
+    container.env_config.service_switch.from_env("SERVICE_SWITCH")
     print(f"{container.env_config()=}")
